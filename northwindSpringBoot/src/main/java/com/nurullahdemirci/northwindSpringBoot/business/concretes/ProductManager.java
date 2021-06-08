@@ -15,6 +15,7 @@ import com.nurullahdemirci.northwindSpringBoot.core.utilities.results.SuccessDat
 import com.nurullahdemirci.northwindSpringBoot.core.utilities.results.SuccessResult;
 import com.nurullahdemirci.northwindSpringBoot.dataAccess.abstracts.ProductDao;
 import com.nurullahdemirci.northwindSpringBoot.entities.concretes.Product;
+import com.nurullahdemirci.northwindSpringBoot.entities.dtos.ProductWithCategoryDto;
 
 @Service
 public class ProductManager implements ProductService{
@@ -85,6 +86,12 @@ public class ProductManager implements ProductService{
 	@Override
 	public DataResult<List<Product>> getByNameCategoryId(String productName, Integer categoryId) {
 		return new SuccessDataResult<List<Product>>(this.productDao.getByNameCategory_CategoryId(productName, categoryId), "Data Listelendi");
+	}
+
+	@Override
+	public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails() {
+		return new SuccessDataResult<List<ProductWithCategoryDto>>(
+				this.productDao.getProductWithCategoryDetails(), "Data Listelendi");
 	}
 
 }
