@@ -8,7 +8,7 @@ export default function Categories() {
 			<Menu inverted pointing vertical>
 				<Menu.Item name="home" />
 				<Menu.Item name="products">
-					<Link exact to="/products">
+					<Link exact="true" to="/products">
 						Products
 					</Link>
 				</Menu.Item>

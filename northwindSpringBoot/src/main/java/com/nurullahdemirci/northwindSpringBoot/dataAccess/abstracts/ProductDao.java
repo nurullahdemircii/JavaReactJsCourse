@@ -10,6 +10,8 @@ import com.nurullahdemirci.northwindSpringBoot.entities.dtos.ProductWithCategory
 
 public interface ProductDao extends JpaRepository<Product, Integer>{
 	
+	Product getById(Integer id);
+	
 	Product getByProductName(String productName);
 	
 	Product getByProductNameAndCategory_CategoryId(String productName, Integer categoryId);

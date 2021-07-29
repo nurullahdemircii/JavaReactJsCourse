@@ -4,17 +4,17 @@ import { Button, Card, Image } from 'semantic-ui-react';
 import ProductService from '../services/productService';
 
 export default function ProductDetail() {
-	let { name } = useParams();
+	let { id } = useParams();
 
     const [product, setProduct] = useState([]);
 
 	useEffect(() => {
 		let productService = new ProductService();
 		productService
-			.getByProductName(name)
+			.getById(id)
 			.then((result) => setProduct(result.data.data));
 	}, []);
-
+	
 	return (
 		<div>
 			<Card.Group>
@@ -28,10 +28,10 @@ export default function ProductDetail() {
 						<Card.Header>{product.productName}</Card.Header>
 						<Card.Meta>Birim Fiyat : {product.unitPrice}</Card.Meta>
 						<Card.Description>
-							Açıklama : <strong>{product.quantityPerUnit}</strong>
+							Açıklama : <strong>{product.quantityPerUnit}</strong> <br />
+							Kategori : {product.category&&product.category.categoryName}
 						</Card.Description>
-                        <Card.Content>Kategori : {product.category.categoryName}</Card.Content>
-					</Card.Content>
+                    </Card.Content>
 					<Card.Content extra>
 						<div className="ui two buttons">
 							<Button basic color="green">Sepete Ekle</Button>

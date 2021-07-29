@@ -94,4 +94,9 @@ public class ProductManager implements ProductService{
 				this.productDao.getProductWithCategoryDetails(), "Data Listelendi");
 	}
 
+	@Override
+	public DataResult<Product> getById(Integer id) {
+		return new SuccessDataResult<Product>(this.productDao.getById(id), "Data Listed.");
+	}
+
 }
