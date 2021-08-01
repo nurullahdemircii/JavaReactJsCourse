@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
-import { Button, Container, Dropdown, Menu } from 'semantic-ui-react';
+import { Container, Menu } from 'semantic-ui-react';
 import CartSummary from './CartSummary';
 import SignedIn from './SignedIn';
 import SignedOut from './SignedOut';

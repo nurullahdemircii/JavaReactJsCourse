@@ -25,7 +25,6 @@ export default function cartReducer(state = initialState, { type, payload }) {
 					],
 				};
 			}
-			break;
 
 		case REMOVE_FROM_CART:
 			return {
@@ -34,10 +33,8 @@ export default function cartReducer(state = initialState, { type, payload }) {
 					(c) => c.product.id !== payload.id,
 				),
 			};
-			break;
 
 		default:
 			return state;
-			break;
 	}
 }

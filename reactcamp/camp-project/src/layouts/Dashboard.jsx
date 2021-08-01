@@ -6,6 +6,7 @@ import Categories from './Categories';
 import { Grid } from 'semantic-ui-react';
 import { Route, Switch } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import ProductAdd from '../pages/ProductAdd';
 
 export default function Dashboard() {
     return (
@@ -22,6 +23,7 @@ export default function Dashboard() {
                             <Route exact path="/products" component={ProductList} />
                             <Route path="/products/:id" component={ProductDetail} />
                             <Route path="/cart" component={CartDetail} />
+                            <Route path="/product/add" component={ProductAdd} />
                         </Switch>
                     </Grid.Column>
                 </Grid.Row>
@@ -31,21 +33,19 @@ export default function Dashboard() {
 }
 /*
 
-React Redux Lesson - 013
+React Lesson - 014
 
-Redux
-state management, global state, store
-npm install react-redux
-npm install redux
-npm install redux-devtools-extension
-CRUD operations equal action for Redux.
-global state equal reducer for Redux.
-New Folder in src { store }
-New Folder in store { actions, initialValues, reducer }
-useSelector, dispatch
-npm install toastify
+Build forms in React, without the tears (Formik.org)
+Form builder
+npm install formik
 
-Ticket  :   Lesson-013
-Date    :   29.07.2021   
+Yup is a JavaScript schema builder for value parsing and validation.
+https://github.com/jquense/yup (Yup)
+npm install yup
+
+ProjectAdd.jsx Post Operation
+
+Ticket  :   Lesson-014
+Date    :   01.08.2021   
 
 */
